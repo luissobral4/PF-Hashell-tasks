@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Pizza
+comment1.params=message\ min\ max\ mealNumber
+comment1.target=int\ ReadInt(java.lang.String,\ int,\ int,\ boolean)
+comment2.params=n
+comment2.target=int\ containsInt(int)
+comment3.params=s\ pizza
+comment3.target=boolean\ contains(java.lang.String,\ boolean)
+comment4.params=message\ pizza\ payment
+comment4.target=java.lang.String\ ReadString(java.lang.String,\ boolean,\ boolean)
+comment5.params=invoiceNr\ address\ phone\ mealNumber\ mealType\ mealSize\ payment
+comment5.target=void\ invoice(int,\ java.lang.String,\ int,\ int[],\ java.lang.String[],\ int,\ java.lang.String)
+comment6.params=totalSales\ totalMeals
+comment6.target=void\ option2(int,\ int)
+comment7.params=meal
+comment7.target=java.lang.String\ mealDescription(java.lang.String)
+comment8.params=type
+comment8.target=java.lang.String\ paymentType(java.lang.String)
+comment9.params=params
+comment9.target=void\ main(java.lang.String[])
+numComments=10

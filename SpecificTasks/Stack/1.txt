@@ -1,0 +1,21 @@
+45
+112
+159
+-1300575
+-78
+5476
+85
+-68
+ERROR: Too few operations
+21
+-45
+64
+ERROR: Too few operations
+ERROR: Too few operations
+165
+-1
+-142
+566930
+ERROR: Attempted division 0
+37
+-46

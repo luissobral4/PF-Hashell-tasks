@@ -1,0 +1,44 @@
+Implement a module containing four functions and write a short report about your
+implementation:
+
+Function 1: Implement a function quadrupling a given numerical input
+
+Define a function
+quadruple :: Num a => a -> a
+that returns the input times four
+
+Function 2: Implement a function that checks whether the argument list is palindromic
+
+Define a function
+isPalindrome :: Eq a => [a] -> Bool
+that returns True if the list argument is palindromic, that is, where the values stored in the list
+don’t change even if the list is read in reverse, and returns False if not.
+
+Function 3: Implement a function that splits a list
+
+Define a function
+halve :: [s] -> ([a], [a])
+that splits a list into two equal halves which are returned as a tuple. If the list is not of an even
+length, the first half should be one element shorter than the second half.
+
+Function4: Implement a function that computers the integer log (base 10)
+
+Implement the function
+log10 :: Integral a => a -> a
+4
+which computes the integer log (base 10) of its argument. That is, log10 computes the exponent
+of the largest power of 10 which is less than or equal to its argument.
+
+Function 5: Implement a function that searches a list for an item
+
+Write a recursive function
+find :: a -> [a] -> a -> Int
+that returns the index position of the first argument in the list given as second argument. The
+function should return -1 if the first argument is not in the list.
+
+Function 6: Implement the factorial function
+
+Using recursion, define a function
+factorial :: Int -> Int
+calculating the factorial of a number, that is, the product of all positive integers less than or equal
+to the given number

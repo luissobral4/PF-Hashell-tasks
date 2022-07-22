@@ -1,0 +1,20 @@
+Test suite A3-testsuite: RUNNING...
+Cases: 4  Tried: 0  Errors: 0  Failures: 0                                          ### Failure in: 0:direct distance
+src\TestSuite.hs:28
+expected: "From Earth to Sun is 149598262km\n"
+ but got: ""
+Cases: 4  Tried: 1  Errors: 0  Failures: 1                                          ### Failure in: 1:direct orbit
+src\TestSuite.hs:30
+expected: "Earth orbits Sun\n"
+ but got: ""
+Cases: 4  Tried: 2  Errors: 0  Failures: 2                                          ### Failure in: 2:solar system1
+src\TestSuite.hs:32
+expected: "From Sun to Moon is 149982662km\nFrom Deimos to Moon is 377949944km\nDeimos orbits Mars Sun\nFrom Deimos to Phobos is 32834km\nMoon orbits Earth Sun\nLROrbiter orbits Moon Earth Sun\n"
+ but got: ""
+Cases: 4  Tried: 3  Errors: 0  Failures: 3                                          ### Failure in: 3:solar system2
+src\TestSuite.hs:44
+expected: "From LROrbiter to Deimos is 377951701km\n"
+ but got: ""
+Cases: 4  Tried: 4  Errors: 0  Failures: 4
+Test suite A3-testsuite: FAIL
+Test suite logged to: C:\Users\Kotori\Desktop\506\A1\A3\dist-newstyle\build\x86_64-windows\ghc-8.10.7\A3-0.1.0.0\t\A3-testsuite\test\A3-0.1.0.0-A3-testsuite.log

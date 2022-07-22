@@ -1,0 +1,61 @@
+module Ratings where
+
+import Data.Set (Set)
+import qualified Data.Set as Set
+import Data.Map (Map)
+import qualified Data.Map as Map
+import Data.List
+
+type Customer = String
+type Product = String
+type Score = Int
+
+-- a single rating of a product by a customer
+type Rating = (Customer, Product, Score)
+
+unique :: Ord a => [a] -> [a]
+unique = Set.elems . Set.fromList
+
+test :: [Rating]
+test = [("kyle","shoes",7),("kyle","hoodie",4),("tom","shoes",6),("tom","hoodie",5),("huncho","jeans",8),("ryan","jeans",7),("ryan","shoes",3),("huncho","hoodie",9)]
+
+-- a list of all customers who submitted a rating, without duplicates
+customers :: [Rating] -> [Customer]
+customers rs = unique $ [customer | (customer, product, score) <- rs]
+
+-- a list of all products that have been rated, without duplicates
+products :: [Rating] -> [Product]
+products rs = unique $ [product | (customer, product, score) <- rs]
+
+-- customers and the number of products they have rated
+selectCustomer :: Rating -> Customer
+selectCustomer (customer, _, _) = customer
+
+compareCustomer :: Rating -> Rating -> Bool
+compareCustomer (customer1, _, _) (customer2, _, _) = customer1 == customer2
+
+groupCustomer :: [Rating] -> [[Rating]]
+groupCustomer = groupBy compareCustomer . sort
+
+numScores :: [Rating] -> [(Customer, Int)]
+numScores rs  = map (\rating -> (selectCustomer $ head rating, length rating)) $ groupCustomer rs
+
+-- a list of the customers who give the same score in all their ratings
+
+consistent :: [Rating] -> [Customer]
+consistent rs = Map.keys $ Map.filter (\l -> length l == 1) $ Map.map (unique) $ Map.fromListWith (++) $ list
+                where list = [(customer,[score]) | (customer, product, score) <- rs]
+
+-- the average score of each product
+averageScore :: [Rating] -> [(Product, Double)]
+averageScore rs = map (f) $ Map.toList $ Map.fromListWith (++) $ list
+                  where list = [(product,[score]) | (customer, product, score) <- rs]
+                        f (x,y) = (x,fromIntegral(sum y) / fromIntegral(length y)) 
+
+-- the products that have each been rated by every customer
+popular :: [Rating] -> [Product]
+popular rs = Map.keys $ Map.filter (\l -> length l == s) $ Map.map (unique) $ Map.fromListWith (++) $ list
+                where list = [(product,[customer]) | (customer, product, score) <- rs]
+                      s = length $ customers rs
+
+
